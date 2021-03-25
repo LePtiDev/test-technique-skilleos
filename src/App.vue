@@ -1,5 +1,5 @@
 <template>
-    <div class="app">
+    <div>
         <TheHeader/>
         <router-view/>
     </div>
@@ -19,17 +19,19 @@
 
 <style lang="scss">
 
-    body{
+    *{
         margin: 0;
         padding: 0;
+        box-sizing: border-box;
     }
 
-    .app{
-        width: 100vw;
+    #app{
+        width: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: column;
+        background-color: yellow;
     }
 
 </style>
