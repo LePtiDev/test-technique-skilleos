@@ -1,7 +1,7 @@
 <template>
-    <div class="">
+    <div class="container-pages">
         <h2>Episodes</h2>
-        <pre>{{episodes}}</pre>
+        <EpisodeList :episodes="episodes.results"/>
     </div>
 </template>
 
@@ -9,8 +9,12 @@
 
     const axios = require("axios");
 
+    //components
+    import EpisodeList from "@/components/Episodes/EpisodeList";
+
     export default {
         name: "Episodes",
+        components: {EpisodeList},
         data(){
             return {
                 episodes: {},
@@ -29,6 +33,6 @@
     }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 
 </style>
