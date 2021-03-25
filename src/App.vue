@@ -1,7 +1,27 @@
 <template>
-    <router-view/>
+    <div class="app">
+        <TheHeader/>
+        <router-view/>
+    </div>
 </template>
 
-<style lang="scss">
+<script>
 
+    import TheHeader from "@/components/TheHeader";
+    export default {
+        name: "App",
+        components: {
+            TheHeader
+        }
+    }
+</script>
+
+<style lang="scss">
+    .app{
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
 </style>
