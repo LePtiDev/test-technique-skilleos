@@ -1,16 +1,18 @@
 <template>
-    <div class="">
+    <div class="container-pages">
         <h2>Personnages</h2>
-        <pre>{{characters}}</pre>
+        <CharacterList :characters="characters.results"/>
     </div>
 </template>
 
 <script>
 
+    import CharacterList from "@/components/characters/CharacterList";
     const axios = require("axios");
 
     export default {
         name: "Character",
+        components: {CharacterList},
         data(){
             return {
                 characters: {},
@@ -27,6 +29,7 @@
             }
         }
     }
+
 </script>
 
 <style scoped>
