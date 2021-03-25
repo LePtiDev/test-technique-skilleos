@@ -24,7 +24,9 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 0 100px 0 100px;
+        -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.40);
+        -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.40);
+        box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.40);
 
         .logo{
             width: 200px;
