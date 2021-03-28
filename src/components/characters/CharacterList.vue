@@ -14,9 +14,8 @@
             CharacterListItem
         },
         props: {
-            characters: Object,
+            characters: Array,
             link: Array,
-            test: Object
         },
         computed: {
 
