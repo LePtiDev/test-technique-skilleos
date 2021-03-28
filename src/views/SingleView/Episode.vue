@@ -3,7 +3,7 @@
         <div class="card-episode">
             <h2>Episode: {{episode.name}}</h2>
             <p>{{episode.air_date}}</p>
-            <p>{{episode.episode}}</p>
+            <p><span class="section">Gender </span><span class="badge rounded-pill bg-primary">{{episode.episode}}</span></p>
         </div>
         <h2>Characters in this episode : </h2>
         <CharacterList :link="episode.characters"/>
