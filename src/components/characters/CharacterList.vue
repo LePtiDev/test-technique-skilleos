@@ -1,18 +1,36 @@
 <template>
     <div class="container-card-characters">
-        <CharacterListItem v-for="(character, index) in characters" :key="index" :character="character"/>
+        <CharacterListItem v-for="(character, index) in getAllCharacters()" :key="index" :character="getAllCharacters()[index]"/>
     </div>
 </template>
 
 <script>
+
     import CharacterListItem from "@/components/characters/CharacterListItem";
+
     export default {
         name: "CharacterList",
         components: {
             CharacterListItem
         },
         props: {
-            characters: Object
+            characters: Object,
+            link: Array,
+            test: Object
+        },
+        computed: {
+
+        },
+        methods: {
+
+            getAllCharacters() {
+                if(this.characters){
+                    return this.characters
+                }
+                else{
+                    return this.link
+                }
+            },
         }
     }
 </script>
