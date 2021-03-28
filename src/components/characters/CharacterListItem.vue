@@ -1,17 +1,16 @@
 <template>
-    <router-link :to="{ name: 'Character', params: { id: character.id }}">
+    <router-link :to="{ name: 'Character', params: { id: showCharacter.id }}">
         <div class="card card-character" style="width: 18rem;">
+            <span v-if="showCharacter.status === 'Alive'" class="badge pill-status rounded-pill bg-success">{{showCharacter.status}}</span>
+            <span v-if="showCharacter.status === 'Dead'" class="badge pill-status rounded-pill  bg-danger">{{showCharacter.status}}</span>
+            <span v-if="showCharacter.status === 'unknown'" class="badge pill-status rounded-pill  bg-secondary">{{showCharacter.status}}</span>
 
-            <span v-if="character.status === 'Alive'" class="badge pill-status rounded-pill bg-success">{{character.status}}</span>
-            <span v-if="character.status === 'Dead'" class="badge pill-status rounded-pill  bg-danger">{{character.status}}</span>
-            <span v-if="character.status === 'unknown'" class="badge pill-status rounded-pill  bg-secondary">{{character.status}}</span>
-
-            <img :src="character.image" class="card-img-top" :alt="character.name">
+            <img :src="showCharacter.image" class="card-img-top" :alt="showCharacter.name">
             <div class="card-body">
-                <h5 class="card-title">{{character.name}}</h5>
-                <p class="card-text">{{character.gender}}</p>
-                <p class="card-text">{{character.species}}</p>
-                <router-link :to="{ name: 'Character', params: { id: character.id }}" class="btn btn-primary">See this character</router-link>
+                <h5 class="card-title">{{showCharacter.name}}</h5>
+                <p class="card-text">{{showCharacter.gender}}</p>
+                <p class="card-text">{{showCharacter.species}}</p>
+                <router-link :to="{ name: 'Character', params: { id: showCharacter.id }}" class="btn btn-primary">See this character</router-link>
             </div>
         </div>
     </router-link>
@@ -19,10 +18,36 @@
 
 <script>
 
+    const axios = require("axios");
+
     export default {
         name: "CharacterListItem",
         props:{
-            character: Object
+            character: [Object, String]
+        },
+        data(){
+            return {
+                data: {}
+            }
+        },
+        computed: {
+             showCharacter() {
+                if(typeof this.character === 'string'){
+                    this.getCharacter(this.character)
+                    return this.data
+                }
+                else{
+                    console.log(this.data)
+                    return this.character
+                }
+            }
+        },
+        methods: {
+             getCharacter(url) {
+                 axios.get(url)
+                        .then(result => this.data = result.data)
+                        .catch(error => console.error(error))
+            }
         }
     }
 </script>
@@ -31,12 +56,5 @@
     .card-character{
         position: relative;
         margin: 15px 30px;
-
-        .pill-status{
-            top: 10px;
-            right: 10px;
-            font-size: 15px;
-            position: absolute;
-        }
     }
 </style>
