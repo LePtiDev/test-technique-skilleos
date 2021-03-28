@@ -1,16 +1,18 @@
 <template>
-    <div class="">
+    <div class="container-pages">
         <h2>Localisations</h2>
-        <pre>{{locations}}</pre>
+        <LocalisationList :locations="locations.results"/>
     </div>
 </template>
 
 <script>
 
+    import LocalisationList from "@/components/Localisations/LocalisationList";
     const axios = require("axios");
 
     export default {
         name: "Locations",
+        components: {LocalisationList},
         data(){
             return {
                 locations: {},
@@ -22,7 +24,7 @@
         },
         methods: {
             async getLocations(){
-                const { data } = await axios.get("https://rickandmortyapi.com/api/episode/?page=" + this.page);
+                const { data } = await axios.get("https://rickandmortyapi.com/api/location/?page=" + this.page);
                 this.locations = data;
             }
         }
