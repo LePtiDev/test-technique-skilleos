@@ -37,7 +37,6 @@
                     return this.data
                 }
                 else{
-                    console.log(this.data)
                     return this.character
                 }
             }
