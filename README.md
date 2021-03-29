@@ -14,11 +14,11 @@ Le projet demandé, réalisé avec la technologie [Vue.js](https://vuejs.org/).
 Ce projet a été réalisé suivant deux types de configuration. Dans un premier temps,  il a été configuré à l'aide de [vue-cli](https://cli.vuejs.org/).
 J'ai utilisé la version 2 de vue.js pour des soucis de compatibilité avec certains modules encore non mis à jours. Cependant, l'api composition de vue 3 est possible à mettre en place dans une version future.
 
-J'ai utiliser les conventions (vue)[https://fr.vuejs.org/v2/style-guide/index.html] et l'anglais afin de rendre ce projet multi-langue.
+J'ai utiliser les conventions [vue](https://fr.vuejs.org/v2/style-guide/index.html) et l'anglais afin de rendre ce projet multi-langue.
 
 Lien de préproduction : 
 ```
-npm install
+http://dev.mustii.fr/test-technique-skilleos/
 ```
 
 ## Installation du projet
