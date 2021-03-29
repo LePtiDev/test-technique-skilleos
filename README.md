@@ -17,6 +17,8 @@ Ce projet a été réalisé suivant deux type de configuration. Dans un premier 
 J'ai utilisé la version 2 de vue.js pour des soucis de compatibilité avec certain modules encore non mis a jours. Cependant l'api composition de vue 3 est possible a mettre en place dans un
 version futur.
 
+J'ai utiliser les convention (vue)[https://fr.vuejs.org/v2/style-guide/index.html] et l'anglais afin de rendre ce projet multi langue.
+
 Lien de préproduction : 
 ```
 npm install
