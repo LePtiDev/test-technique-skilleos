@@ -8,7 +8,7 @@ module.exports = {
     },
 
     // preprod
-    publicPath: '/mustii/test-technique-skilleos'
+    publicPath: '/test-technique-skilleos'
 }
 
 function addStyleResource (rule) {
