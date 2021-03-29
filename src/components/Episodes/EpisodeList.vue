@@ -1,6 +1,6 @@
 <template>
     <div class="container-card-episodes">
-        <EpisodesListItem v-for="(episode, index) in episodes" :key="index" :episode="episode"/>
+        <EpisodesListItem v-for="(episode, index) in getAllEpisodes()" :key="index" :episode="getAllEpisodes()[index]"/>
     </div>
 </template>
 
@@ -11,9 +11,22 @@ import EpisodesListItem from "@/components/Episodes/EpisodesListItem";
 
 export default {
     name: "EpisodeList",
-    components: {EpisodesListItem},
+    components: {
+        EpisodesListItem
+    },
     props: {
         episodes: Array,
+        link: Array,
+    },
+    methods: {
+        getAllEpisodes() {
+            if(this.episodes){
+                return this.episodes
+            }
+            else{
+                return this.link
+            }
+        },
     }
 }
 </script>

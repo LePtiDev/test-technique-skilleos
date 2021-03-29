@@ -1,22 +1,48 @@
 <template>
-    <router-link :to="{ name: 'Episode', params: { id: episode.id }}">
+    <router-link :to="{ name: 'Episode', params: { id: showEpisode.id }}">
         <div class="card-episodes">
-            <h3>{{episode.name}}</h3>
+            <h3>{{showEpisode.name}}</h3>
             <div class="container-date-episode">
-                <p>{{episode.air_date}}</p>
-                <p>{{episode.episode}}</p>
+                <p>{{showEpisode.air_date}}</p>
+                <p>{{showEpisode.episode}}</p>
             </div>
         </div>
     </router-link>
 </template>
 
 <script>
-export default {
-    name: "EpisodesListItem",
-    props: {
-        episode: Object
+
+    const axios = require("axios");
+
+    export default {
+        name: "EpisodesListItem",
+        props: {
+            episode: [Object, String]
+        },
+        data(){
+            return {
+                data: {}
+            }
+        },
+        computed: {
+            showEpisode() {
+                if(typeof this.episode === 'string'){
+                    this.getEpisode(this.episode)
+                    return this.data
+                }
+                else{
+                    return this.episode
+                }
+            }
+        },
+        methods: {
+            getEpisode(url) {
+                axios.get(url)
+                    .then(result => this.data = result.data)
+                    .catch(error => console.error(error))
+            }
+        }
     }
-}
 </script>
 
 <style scoped lang="scss">
