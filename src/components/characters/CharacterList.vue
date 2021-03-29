@@ -17,11 +17,7 @@
             characters: Array,
             link: Array,
         },
-        computed: {
-
-        },
         methods: {
-
             getAllCharacters() {
                 if(this.characters){
                     return this.characters
