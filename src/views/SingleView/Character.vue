@@ -27,16 +27,18 @@
         </div>
 
         <h2>Episodes</h2>
-        <pre>{{character.episode}}</pre>
+        <EpisodeList :link="character.episode"/>
     </div>
 </template>
 
 <script>
 
+    import EpisodeList from "@/components/Episodes/EpisodeList";
     const axios = require("axios");
 
     export default {
         name: "Character",
+        components: {EpisodeList},
         data(){
             return {
                 character: {},
