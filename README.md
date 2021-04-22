@@ -1,4 +1,4 @@
-# Test Skilleos
+# Test pour Skilleos
 
 J'ai réalisé une interface graphique pour l'api [rick et morty](https://rickandmortyapi.com/). Ce test a été réalisé sur 5h et avait pour but de montrer mes skills en vue. 
 Je voulais m'attarder sur le côté technique plus que graphique. Je n’ai donc pas fais de version responsive. Si toutefois, vous voulez voir des sites montrant mes skills en front je vous mets les liens ci-dessous : 
